@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Portal Navbar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header -area  -->
+  <header class="navbar">
+    <nav class="nav-container">
+      <div class="nav-left">
+        <div class="dropdown">
+          <a href="#">Home </a>
+        </div>
+        <div class="dropdown">
+          <a href="#">Recommended Jobs ▼</a>
+          <div class="dropdown-menu">
+            <a href="#">Web Designer</a>
+            <a href="#">Graphics Designer</a>
+            <a href="#">Web Developer</a>
+            <a href="#">Software Developer</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Employers ▼</a>
+          <div class="dropdown-menu">
+            <a href="./pages/login.html">Post a Job</a>
+            <a href="#">Company List</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="./pages/Career.html">Career Resources </a>
+          <!-- <div class="dropdown-menu">
+            <a href="./pages/login.html">Browse Resumes</a>
+            <a href="./pages/login.html">Candidate Dashboard</a>
+          </div> -->
+        </div>
+        <div class="dropdown">
+            <a href="#">About</a>
+        </div>
+        <div class="dropdown">
+            <a href="#">Contact</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a href="./pages/login.html" class="upload-link">Upload your CV</a>
+        <a href="./pages/login.html" class="login-btn">Login / Register</a>
+        <a href="./pages/login.html" class="post-btn">Job Post</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- section area or search area  -->
+  <section class="job-search-section">
+    <div class="container">
+      <h1>There Are <span class="highlight">93,178</span> Postings Here For you!</h1>
+      <p class="subtitle">Find Jobs, Employment & Career Opportunities</p>
+
+      <div class="search-box">
+        <div class="input-group">
+          <span class="icon">🔍</span>
+          <input type="text" placeholder="Job title, keywords, or company" />
+        </div>
+        <div class="input-group">
+          <span class="icon">📍</span>
+          <input type="text" placeholder="City or postcode" />
+        </div>
+        <button class="find-btn">Find Jobs</button>
+      </div>
+
+      <p class="popular-searches">
+        <strong>Popular Searches :</strong>
+        Designer, Developer, Web, IOS, PHP, Senior, Engineer
+      </p>
+    </div>
+  </section>
+</body>
+</html>
