@@ -8,16 +8,50 @@
 </head>
 <body>
   <div class="auth-container">
-    <form class="auth-form">
+    <form class="auth-form" id="registerForm">
       <h2>Register</h2>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm Password" required />
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
       <button type="submit">Register</button>
       <p>Already have an account? <a href="login.html">Login</a></p>
     </form>
     <a href="../index.html" class="back-home">← Back to Home</a>
   </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Check if email already exists
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const userExists = users.find(user => user.email === email);
+
+      if (userExists) {
+        alert("User already exists!");
+        return;
+      }
+
+      // Save the new user
+      users.push({ name, email, password });
+      localStorage.setItem('users', JSON.stringify(users));
+
+      alert("Registration successful! Please login.");
+      window.location.href = 'login.html';
+    });
+  </script>
 </body>
 </html>
